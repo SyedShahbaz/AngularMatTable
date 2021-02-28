@@ -1,0 +1,17 @@
+
+@import '../../../../assets/scss/placeholder.scss';
+@import '../../../../assets/scss/mixins.scss';
+
+:host {
+    .mat-table {
+        @extend %mat-table-default;
+
+        @include mat-table-columns((
+        Position: (width: 40px, justify: center),
+        Name: (width: 275px),
+        Weight : (width: 150px, justify-cell: flex-start),
+        Symbol: (width: 140px, justify-head: center, justify-cell: center),
+      ));
+    }
+
+}

@@ -1,0 +1,27 @@
+<div class="table-wrapper">
+  <mat-table matSort [dataSource]="dataSource">
+  
+    <ng-container matColumnDef="Position">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>No</mat-header-cell>
+      <mat-cell *matCellDef="let data">{{ data.position }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let data">{{ data.name }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Weight">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Weight</mat-header-cell>
+      <mat-cell *matCellDef="let data">{{ data.weight }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Symbol">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Symbol</mat-header-cell>
+      <mat-cell *matCellDef="let data">{{ data.symbol }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

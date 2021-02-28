@@ -1,0 +1,27 @@
+@mixin mat-table-columns($columns) {
+    .mat-column- {
+      @each $colName, $props in $columns {
+        $width: map-get($props, 'width');
+  
+        &#{$colName} {
+          min-width: $width;
+  
+          @if map-has-key($props, 'justify') {
+            justify-content: map-get($props, 'justify');
+          }
+  
+          @if map-has-key($props, 'justify-head') {
+            &.mat-header-cell {
+              justify-content: map-get($props, 'justify-head');
+            }
+          }
+  
+          @if map-has-key($props, 'justify-cell') {
+            &.mat-cell {
+              justify-content: map-get($props, 'justify-cell');
+            }
+          }
+        }
+      }
+    }
+}
